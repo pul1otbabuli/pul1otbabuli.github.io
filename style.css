@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.divider {
+    background-color: rgb(211, 211, 211);
+    height: 2rem;
+}
+
+.bg-gray {
+    background-color: rgb(211, 211, 211);
+}
+
+@media screen and (max-width: 960px) {
+    #table {
+        order: 1;
+    }
+
+    #hyperlinks-list {
+        order: 2;
+    }
+}
