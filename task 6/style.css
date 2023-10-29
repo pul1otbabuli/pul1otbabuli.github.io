@@ -1,22 +1,11 @@
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    color: #333;
-}
-
-
 #calculator-form {
-    margin: 20px auto;
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
-    max-width: 400px;
     background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -28,8 +17,14 @@ label {
 input[type="number"],
 select {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
 }
 
 input[type="checkbox"] {
@@ -37,8 +32,25 @@ input[type="checkbox"] {
 }
 
 
+#calculate-button {
+    background-color: #E36414;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#calculate-button:hover {
+    background-color: #C7510F;
+}
+
+
 #total-price {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: #E36414;
+    margin-top: 10px;
 }
+
