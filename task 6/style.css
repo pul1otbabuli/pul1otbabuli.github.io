@@ -32,20 +32,6 @@ input[type="checkbox"] {
 }
 
 
-#calculate-button {
-    background-color: #E36414;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#calculate-button:hover {
-    background-color: #C7510F;
-}
-
 
 #total-price {
     font-size: 20px;
