@@ -3,21 +3,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const serviceRadios = document.getElementsByName("service");
     const optionSelect = document.getElementById("option");
     const propertyCheckbox = document.getElementById("property");
+    const calculateButton = document.getElementById("calculate-button");
     const totalPriceSpan = document.getElementById("total-price");
 
-   
+    
     const prices = {
-        service1: 10,
-        service2: 20,
-        service3: 30,
-        option1: 5,
-        option2: 10,
-        option3: 15,
-        property1: 7,
+        service1: 50,    // Уборка
+        service2: 100,   // Ремонт
+        service3: 30,    // Доставка
+        option1: 0,      // Стандартная
+        option2: 30,     // Премиум
+        option3: 50,     // Экспресс
+        property1: 20,   // Страховка
     };
 
     
-    function recalculateTotalPrice() {
+    function calculateTotalPrice() {
         let total = 0;
 
         
@@ -49,12 +50,13 @@ document.addEventListener("DOMContentLoaded", function() {
         totalPriceSpan.textContent = total + " рублей";
     }
 
-    
-    quantityInput.addEventListener("input", recalculateTotalPrice);
-    serviceRadios.forEach(radio => radio.addEventListener("change", recalculateTotalPrice));
-    optionSelect.addEventListener("change", recalculateTotalPrice);
-    propertyCheckbox.addEventListener("change", recalculateTotalPrice);
+   
+    calculateButton.addEventListener("click", calculateTotalPrice);
+    quantityInput.addEventListener("input", calculateTotalPrice);
+    serviceRadios.forEach(radio => radio.addEventListener("change", calculateTotalPrice));
+    optionSelect.addEventListener("change", calculateTotalPrice);
+    propertyCheckbox.addEventListener("change", calculateTotalPrice);
 
     
-    recalculateTotalPrice();
+    calculateTotalPrice();
 });
