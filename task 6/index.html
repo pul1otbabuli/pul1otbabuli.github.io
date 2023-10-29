@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор стоимости услуги</title>
     <script src="calculator.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h1>Калькулятор стоимости услуги</h1>
@@ -15,21 +16,24 @@
         </div>
         <div>
             <label>Тип услуги:</label>
-            <input type="radio" name="service" value="service1" checked> Услуга 1
-            <input type="radio" name="service" value="service2"> Услуга 2
-            <input type="radio" name="service" value="service3"> Услуга 3
+            <input type="radio" name="service" value="service1" checked> Уборка
+            <input type="radio" name="service" value="service2"> Ремонт
+            <input type="radio" name="service" value="service3"> Доставка
         </div>
         <div>
-            <label for="option">Опция товара:</label>
+            <label for="option">Опция услуги:</label>
             <select id="option">
-                <option value="option1">Опция 1</option>
-                <option value="option2">Опция 2</option>
-                <option value="option3">Опция 3</option>
+                <option value="option1">Стандартная</option>
+                <option value="option2">Премиум</option>
+                <option value="option3">Экспресс</option>
             </select>
         </div>
         <div>
-            <label for="property">Свойство товара:</label>
-            <input type="checkbox" id="property" value="property1"> Свойство 1
+            <label for="property">Дополнительное свойство:</label>
+            <input type="checkbox" id="property" value="property1"> Страховка
+        </div>
+        <div>
+            <button id="calculate-button">Рассчитать</button>
         </div>
         <div>
             <p>Итоговая стоимость: <span id="total-price">0</span> рублей</p>
