@@ -1,176 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="ru">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zaslavets</title>
-<style>
-body {
-background-image: url('photo_5226569269444201732_x.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-margin: 0;
-padding: 0;
-}
-header {
-background-color: rgba(0, 0, 0, 0.7);
-padding: 10px;
-text-align: center;
-}
-header a {
-text-decoration: none;
-color: white;
-margin: 0 20px;
-}
-.logo {
-color: white;
-font-size: 24px;
-font-weight: bold;
-}
-footer {
-background-color: rgba(0, 0, 0, 0.7);
-padding: 10px;
-text-align: center;
-position: absolute;
-bottom: 0;
-width: 100%;
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zaslavets</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body>
-<header>
-<div class="logo">
-<img src = "photo_5226569269444201744_.jpg" alt="BZ"
-</div>
-<nav>
-<a href="#">Главная</a>
-<a href="#">Структура</a>
-<a href="#">Котики</a>
-</nav>
-</header>
 
-</div>
-  <ul>
-      <li><a href = "http://www.kubsu.ru/"> Абсолютная гиперссылка на главную страницу сайта Кубанского государсвенного университета</a></li>
-      <li><a href = "https://www.kubsu.ru/"> Абсолютная на главную сайта Кубгу в протоколе https</a></li>
-      <li><a href = "https://www.google.com/" target="_blank"><img width ="250" src="89e4e13c5e0b25b44371209c12ee5d44.jpeg"></a></li>
-      <li><a href = "y/mysite.html">Сокращенная ссылка на внутреннюю страницу</a></li>
-      <li><a href = "index.html">Сокращенная ссылка на главную страницу</a></li>
-      <li><a href = "#contact" >Ссылка на фрагмент текущей страницы</a></li>
-      <li><a href = "https://www.google.com/search?q=%D0%B2%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F&oq=%D0%B2%D0%B8%D0%BA%D0%B5%D0%BF%D0%B5&aqs=chrome">Ссылка с тремя параметрами в URL</a></li>
-      <li><a href = "https://example.com/page.html?id=123">Ссылка с параметром id в URL</a></li>
-      <li><a href="./mysite.html">Относительная на страницу в текущем каталоге</a></li>
-      <li><a href="about/mysite.html">Относительная на страницу в каталоге about</a></li>
-      <li><a href="../index.html"> Относительная на страницу в каталоге уровнем выше текущего</a></li>
-      <li><a href="../../index.html"> Относительная на страницу в каталоге двумя уровнями выше</a></li>
-      <li>Макроэкономика —<a href="https://ru.wikipedia.org/wiki/Раздел"> раздел</a> экономической теории, изучающий функционирование экономики в целом, экономическую систему как единое целое, совокупность экономических явлений.</li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BA%D1%80%D0%BE%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B0#:~:text=72%5D.%20%D0%92-,%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D1%8F%D1%89%D0%B5%D0%B5,-%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D1%81%D0%B2%D0%BE%D1%91%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Ссылка на фрагмент страницы стороннего сайта</a></li>      
-     <li>
-        <img src="1675059293_3-32.jpg" width="900" height="600" alt="Квадратная область" usemap="#Kvadrat">
-        <map name="Kvadrat">
-            <area shape="rect" coords="280,215,630,405" href="https://www.cicada3301.org" alt="Прямоугольная область">
-        </map>
-    </li>
+<body class="bg-gray">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
-    <li>
-        <img src="ef5d5a59c4a4d9d1deb9a3722b744951.jpeg" width="900" height="600" alt="Круглая область" usemap="#krug">
-        <map name="krug">
-            <area shape="circle" coords="450,300,100" href="https://lolkot.ru" alt="Круглая область">
-        </map>
-    </li>
-      </li>
-      <li><a href = "">Ссылка с пустым href</a></li>
-      <li><a>Ссылка без href</a></li>
-      <li><a href="https://krot.club/100246-prikolnyj-suslik.html" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
-      <li><a href="https://krot.club/99744-smeshnoj-tjulen.html" rel="noindex"></a></li>
-      <li>
-        <ol>
-          <li><a href = "https://www.kubsu.ru/ru/university" title = "about university">Университет</a></li>
-          <li><a href = "https://www.kubsu.ru/ru/education" title = "progremm of education">Образование</a></li>
-          <li><a href = "https://www.kubsu.ru/ru/science" title = "news about science">Наука и инновации</a></li>
-          <li><a href = "https://www.kubsu.ru/ru/abiturient" title = "help for abiturs">Абитуриентам</a></li>
-          <li><a href = "https://www.kubsu.ru/ru/studlife" title = "help for student">Студентам</a></li>
-        </ol>
-      </li>
-      <li>
-        <a href = "ftp://bogdan:1234@poffi.net/text.txt">Ссылка на файл на сервере FTP с авторизацией</a>
-      </li>
-    </ul>
-      
-      <form action="/" method="POST">      
-      <label>
-        ФИО:
-        <br>
-        <input name="field-name-1" value="введите ФИО" >
-      </label>
-      <br>
+    <!-- заголовок -->
+    <header class="fluid-container mb-4 bg-light d-flex flex-wrap justify-content-around">
+        <div class="d-flex align-items-center p-3">
+            <img src="image.jpg" class="img-fluid me-2" width="50" height="40" alt="Фото КубГУ">
+            <div class="fs-4">Сайт по заданию</div>
+        </div>
+        <ul class="nav p-3">
+            <li class="nav-item">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Меню
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="nav-link active" href="#hyperlinks-list">Список</a></li>
+                        <li><a class="nav-link active" href="#table">Таблица</a></li>
+                        <li><a class="nav-link active" href="#form">Форма</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#hyperlinks-list">Список</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#table">Таблица</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#form">Форма</a>
+            </li>
+        </ul>
+    </header>
 
-      <label>
-        Телефон:<br>
-        <input name="field-tel" type="tel" placeholder="Введите ваш номер" >
-        </label><br>
+    <div class="content">
+        <!-- список ссылок -->
+        <div id="hyperlinks-list" class="container py-3 mb-4 bg-light">
+            <ol>
+                <li>
+                    <a class="text-decoration-none" href="http://kubsu.ru/">КубГУ</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="https://www.kubsu.ru/index.php">Главная страница КубГУ</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="https://www.kubsu.ru/index.php"><img src="image.jpg"
+                            class="img-fluid" alt="Открытка" style="width: 600px;"></a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="/second_page.html">Сокращенная ссылка на внутреннюю
+                        страницу</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="/index.html">Сокращенная ссылка на главную страницу</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="#hyperlinks-list">Ссылка на начало списка</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="./second_page.html?user=qwer&password=nxd7d&age=17">Ссылка
+                        с
+                        параметрами</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="./second_page.html?id=12">Ссылка с параметром id</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="./second_page.html">Относительная ссылка на страницу в
+                        текущем
+                        каталоге</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" class="text-decoration-none"
+                        href="./about/third_page.html">Относительная ссылка на страницу в каталоге about</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="../fourth_page.html">Относительная ссылка на страницу в
+                        каталоге
+                        на уровень выше</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="../../fourth_page.html">Относительная ссылка на страницу в
+                        каталоге на два уровня выше</a>
+                </li>
+                <li>
+                    <p>В этом абзаце содержится <a class="text-decoration-none" href="./second_page.html">контекстная
+                            ссылка</a>, и она работает</p>
+                </li>
+                <li>
+                    <a class="text-decoration-none"
+                        href="https://www.kubsu.ru/index.php#:~:text=%D0%9E-,%D0%B2%D0%B0%D0%B6%D0%BD%D0%BE%D0%BC,-2%20567%20%D1%81%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">Ссылка
+                        на фрагмент сайта КубГУ</a>
+                </li>
+                <li>
+                    <img src="photo.jpg" class="img-fluid" alt="Картинка к кругом и квадратом"
+                        style="width:594px; height:316px" usemap="#map">
+                    <map name="map">
+                        <area shape="rect" alt="Квадрат" coords="7,5,296,305" href="/second_page.html">
+                        <area shape="circle" alt="Круг" coords="455,157,130" href="/second_page.html">
+                    </map>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="/">Ссылка с пустым href</a>
+                </li>
+                <li>
+                    <a>Ссылка без href</a>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="./second_page.html" rel="nofollow">Ссылка с запретом
+                        перехода
+                        для
+                        поисковиков</a>
+                </li>
+                <li>
+                    <!--noindex--><a class="text-decoration-none" href="/second_page.html">Ссылка, запрещенная для
+                        индексации
+                        поисковикам</a><!--/noindex-->
+                </li>
+                <li>
+                    <ol>
+                        <li><a class="text-decoration-none" href="https://ru.wikipedia.org"
+                                title="Главная страница Википедии">Википедия</a></li>
+                        <li><a class="text-decoration-none" href="https://ru.wikipedia.org/wiki/Мастер_и_Маргарита"
+                                title="Мастер и Маргарита">Книга</a>
+                        </li>
+                        <li><a class="text-decoration-none"
+                                href="https://ru.wikipedia.org/wiki/Булгаков,_Михаил_Афанасьевич"
+                                title="Булгаков">Писатель</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a class="text-decoration-none" href="ftp://user:parol12@address.ru/file.txt">Ссылка на файл на
+                        сервере
+                        ftp с авторизацией</a>
+                </li>
+            </ol>
+        </div>
 
-      <label>
-        email:<br>
-        <input name="field-email" type="email" placeholder="Введите вашу почту" >
-      </label><br>
+        <!-- таблица -->
+        <div id="table" class="container py-3 mb-4 bg-light">
+            <table class="table table-striped table-bordered mb-0">
+                <tr>
+                    <th>col 1</th>
+                    <th>col 2</th>
+                    <th>col 3</th>
+                    <th>col 4</th>
+                </tr>
+                <tr class="even-tr">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td colspan="4">объединенная строка</td>
+                </tr>
+                <tr class="even-tr">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr class="even-tr">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
-      <label>
-        Дата рождения:<br>
-        <input name="field-date" value="2023-08-09" type="date">
-      </label><br>
+    <!-- форма -->
+    <div id="form" class="container py-3 mb-4 bg-light">
+        <form action="/" method="POST">
 
-      Пол:<br>
+            <div class="mb-3">
+                <label class="form-label">ФИО:
+                    <input class="form-control" name="field-name" placeholder="Введите ваше ФИО">
+                </label>
+            </div>
 
-      <label>
-        <input type="radio" checked="checked" name="radio-group-1" value="Значение1" >
-        Мужской
-      </label>
-        <label><input type="radio" name="radio-group-1" value="Значение2" >
-        Женский
-      </label><br >
+            <div class="mb-3">
+                <label>Телефон:
+                    <input class="form-control" name="field-phone" placeholder="Введите ваш номер" type="tel">
+                </label>
+            </div>
 
-        <label>
-            Любимый язык программирования:
-            <br>
-            <select name="field-name-4[]"
-              multiple="multiple">
-              <option value="Pascal">Pascal</option>
-              <option value="C">C</option>
-              <option value="C++">C++</option>
-              <option value="JavaScript">JavaScript</option>
-              <option value="PHP">PHP</option>
-              <option value="Python">Python</option>
-              <option value="Java">Java</option>
-              <option value="Haskel">Haskel</option>
-              <option value="Clojure">Clojure</option>
-              <option value="Prolog">Prolog</option>
-              <option value="Scala">Scala</option>
-              
-            </select>
-          </label><br>
+            <div class="mb-3">
+                <label>Email:
+                    <input class="form-control" name="field-email" type="email" placeholder="Введите вашу почту">
+                </label>
+            </div>
 
-      <label>
-        Биография:<br>
-        <textarea name="field-name-2">Начните писать</textarea>
-      </label><br>
+            <div class="mb-3">
+                <label>Дата рождения:
+                    <input class="form-control" name="field-birthday" type="date">
+                </label>
+            </div>
 
-      <br>
-      <label id="contact">
-        <input type="checkbox" checked="checked" name="check-1" >
-        С контрактом ознакомлен (а):
-      </label><br>
+            <div class="mb-3 d-flex flex-column">
+                Пол:
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radio-group-1" checked>
+                    <label class="form-check-label">
+                        Мужской
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radio-group-1">
+                    <label class="form-check-label">
+                        Женский
+                    </label>
+                </div>
+            </div>
 
-      <input type="submit" value="Сохранить">
-      </form>
+            <div class="mb-3">
+                <label>
+                    Любимый язык программирования:
+                    <select class="form-select" multiple name="field-pl" size="11">
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Haskel">Haskel</option>
+                        <option value="Clojure">Clojure</option>
+                        <option value="Prolog">Prolog</option>
+                        <option value="Scala">Scala</option>
+                    </select>
+                </label>
+            </div>
 
+            <div class="mb-3">
+                <label>
+                    Биография:
+                    <textarea class="form-control" name="field-biograthy">Пишите здесь...</textarea>
+                </label>
+            </div>
 
+            <div class="mb-3">
+                <input class="form-check-input" type="checkbox" name="check-1">
+                <label class="form-check-label">с контрактом ознакомлен(а)</label>
+            </div>
 
-<footer>
-&copy; 2023 Заславец Богдан | Все права защищены
-</footer>
+            <div>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </div>
+        </form>
+    </div>
 
+    <footer class="fluid-container p-2 fs-4 bg-light">
+        <div>(С) Заславец Богдан</div>
+    </footer>
 </body>
 
 </html>
