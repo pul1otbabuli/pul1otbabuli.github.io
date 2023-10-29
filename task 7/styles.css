@@ -1,0 +1,60 @@
+
+.gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.gallery div {
+    flex: 0 0 33.33%; 
+    scroll-snap-align: center;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.slick-prev, .slick-next {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+/* Стили для пейджера */
+.pager {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pager span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.pager .slick-active {
+    background-color: #000;
+    color: #fff;
+}
