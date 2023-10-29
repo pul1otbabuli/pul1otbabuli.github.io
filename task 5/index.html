@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>task5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <h1>Калькулятор стоимости заказа</h1>
+    <form>
+        <div class="ui-item">
+            <label for="cost">Выберите товар</label>
+            <select id="cost">
+                <option value="5">Товар 1 - 5 руб.</option>
+                <option value="7">Товар 2 - 7 руб.</option>
+                <option value="15">Товар 3 - 15 руб.</option>
+            </select>
+        </div>
+
+        <div class="ui-item">
+            <label for="quantity">Кол-во товара</label>
+            <input id="quantity" placeholder="Введите количество товара">
+        </div>
+
+        <button type="button" id="calculate" class="ui-item">Стоимость</button>
+    </form>
+    <div id="result">Стоимость: </div>
+</body>
+
+</html>
