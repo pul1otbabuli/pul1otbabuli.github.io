@@ -1,60 +1,44 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.gallery-container {
+  position: relative;
+  overflow: hidden;
+}
 
 .gallery {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-.gallery div {
-    flex: 0 0 33.33%; 
-    scroll-snap-align: center;
+.slider {
+  display: flex;
 }
 
-.gallery img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+img {
+  width: 100%;
+  height: auto;
 }
 
-
-.slick-prev, .slick-next {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 1;
-}
-
-.slick-prev {
-    left: 10px;
-}
-
-.slick-next {
-    right: 10px;
-}
-
-/* Стили для пейджера */
 .pager {
-    text-align: center;
-    margin-top: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
-.pager span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    margin: 0 5px;
+.prev,
+.next {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0 10px;
 }
 
-.pager .slick-active {
-    background-color: #000;
-    color: #fff;
+.page-number {
+  font-size: 18px;
 }
