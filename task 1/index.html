@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+    <head>
+        <title>task1</title>
+    </head>
+
+    <body>
+        <ol id="main_list">
+            <li>
+                <a href="http://kubsu.ru/">КубГУ</a>
+            </li>
+            <li>
+                <a href="https://www.kubsu.ru/index.php">Главная страница КубГУ</a>
+            </li>
+            <li>
+                <a href="https://www.kubsu.ru/index.php"><img src="image.jpg" alt="Открытка" style="width: 600px;"></a>
+            </li>
+            <li>
+                <a href="/second_page.html">Сокращенная ссылка на внутреннюю страницу</a>
+            </li>
+            <li>
+                <a href="/index.html">Сокращенная ссылка на главную страницу</a>
+            </li>
+            <li>
+                <a href="#main_list">Ссылка на начало списка</a>
+            </li>
+            <li>
+                <a href="./second_page.html?user=qwer&password=nxd7d&age=17">Ссылка с параметрами</a>
+            </li>
+            <li>
+                <a href="./second_page.html?id=12">Ссылка с параметром id</a>
+            </li>
+            <li>
+                <a href="./second_page.html">Относительная ссылка на страницу в текущем каталоге</a>
+            </li>
+            <li>
+                <a href="./about/third_page.html">Относительная ссылка на страницу в каталоге about</a>
+            </li>
+            <li>
+                <a href="../fourth_page.html">Относительная ссылка на страницу в каталоге на уровень выше</a>
+            </li>
+            <li>
+                <a href="../../fourth_page.html">Относительная ссылка на страницу в каталоге на два уровня выше</a>
+            </li>
+            <li>
+                <p>В этом абзаце содержится <a href="./second_page.html">контекстная ссылка</a>, и она работает</p>
+            </li>
+            <li>
+                <a href="https://www.kubsu.ru/index.php#:~:text=%D0%9E-,%D0%B2%D0%B0%D0%B6%D0%BD%D0%BE%D0%BC,-2%20567%20%D1%81%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">Ссылка на фрагмент сайта КубГУ</a>
+            </li>
+            <li>
+                <img src="photo.jpg" alt="Картинка к кругом и квадратом" style="width:594px; height:316px" usemap="#map">
+                <map name="map">
+                    <area shape="rect" alt="Квадрат" coords="7,5,296,305" href="/second_page.html">
+                    <area shape="circle" alt="Круг" coords="455,157,130" href="/second_page.html">
+                </map>
+            </li>
+            <li>
+                <a href="/">Ссылка с пустым href</a>
+            </li>
+            <li>
+                <a>Ссылка без href</a>
+            </li>
+            <li>
+                <a href="./second_page.html" rel="nofollow">Ссылка с запретом перехода для поисковиков</a>
+            </li>
+            <li>
+                <!--noindex--><a href="/second_page.html">Ссылка, запрещенная для индексации поисковикам</a><!--/noindex-->
+            </li>
+            <li>
+                <ol>
+                    <li><a href="https://ru.wikipedia.org" title="Главная страница Википедии">Википедия</a></li>
+                    <li><a href="https://ru.wikipedia.org/wiki/Мастер_и_Маргарита" title="Мастер и Маргарита">Книга</a></li>
+                    <li><a href="https://ru.wikipedia.org/wiki/Булгаков,_Михаил_Афанасьевич" title="Булгаков">Писатель</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="ftp://user:parol12@address.ru/file.txt">Ссылка на файл на сервере ftp с авторизацией</a>
+            </li>
+        </ol>
+
+        <br><br>
+        <form action="/"
+            method="POST">
+
+            <label>
+                ФИО:<br>
+                <input name="field-name"
+                placeholder="Введите ваше ФИО">
+            </label><br><br>
+
+            <label>
+                Телефон:<br>
+                <input name="field-phone"
+                placeholder="Введите ваш номер"
+                type="tel">
+            </label><br><br>
+
+            <label>
+                Email:<br>
+                <input name="field-email"
+                type="email"
+                placeholder="Введите вашу почту">
+            </label><br><br>
+
+            <label>
+                Дата рождения:<br>
+                <input name="field-birthday"
+                type="date">
+            </label><br><br>
+
+            Пол:<br>
+            <label><input type="radio" checked="checked"
+                name="radio-group-1" value="Мужчина">
+                Мужской</label>
+            <label><input type="radio"
+                name="radio-group-1" value="Женщина">
+                Женский</label><br><br>
+
+            <label>
+                Любимый язык программирования:
+                <br>
+                <select name="field-pl"
+                multiple="multiple" size="11">
+                <option value="Pascal">Pascal</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="PHP">PHP</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Haskel">Haskel</option>
+                <option value="Clojure">Clojure</option>
+                <option value="Prolog">Prolog</option>
+                <option value="Scala">Scala</option>
+                </select>
+            </label><br><br>
+
+            <label>
+                Биография:<br>
+                <textarea name="field-biograthy">Пишите здесь...</textarea>
+            </label><br><br>
+
+            <br>
+            <label>
+                <input type="checkbox"
+                name="check-1">
+                с контрактом ознакомлен(а)
+            </label><br>
+
+            <input type="submit" value="Сохранить">
+        </form>
+    </body>
+
+</html>
