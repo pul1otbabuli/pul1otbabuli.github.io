@@ -31,6 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     contactForm.addEventListener('submit', function (event) {
         event.preventDefault();
+
+        // Check if the checkbox is checked
+        if (!contactForm.agreement.checked) {
+            formMessage.textContent = 'Необходимо согласие с политикой обработки персональных данных';
+            return;
+        }
+
+        // Check if the email is valid
+        const email = contactForm.email.value;
+        if (!isValidEmail(email)) {
+            formMessage.textContent = 'Введите корректный адрес электронной почты';
+            return;
+        }
+
         const formData = new FormData(contactForm);
 
         // Send form data to the server using fetch or another AJAX method
@@ -76,6 +90,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
+
+    // Function to check if the email is valid
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
 });
 
 // Function to submit the form and close the popup
@@ -83,3 +103,4 @@ function submitForm() {
     document.getElementById('contactForm').submit();
     document.getElementById('formPopup').style.display = 'none';
 }
+
