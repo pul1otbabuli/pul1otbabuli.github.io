@@ -1,39 +1,69 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const gallery = document.querySelector(".gallery");
-  const prevButton = document.querySelector(".prev");
-  const nextButton = document.querySelector(".next");
-  const pageNumber = document.querySelector(".page-number");
+document.addEventListener('DOMContentLoaded', function () {
+    const gallery = document.querySelector('.gallery');
+    const pager = document.querySelector('.pager');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
 
-  let currentPage = 1;
-  const itemsPerPage = 3;
+    const images = document.querySelectorAll('.gallery img');
+    const totalImages = images.length;
+    let currentIndex = 0;
+    const imagesPerPage = 3;
+    const totalPages = Math.ceil(totalImages / imagesPerPage);
 
-  const totalItems = document.querySelectorAll(".slider img").length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-  updatePager();
-
-  prevButton.addEventListener("click", function () {
-    if (currentPage > 1) {
-      currentPage--;
-      updateGallery();
-      updatePager();
+    function updatePager() {
+        pager.textContent = `${currentIndex / imagesPerPage + 1} / ${totalPages}`;
     }
-  });
 
-  nextButton.addEventListener("click", function () {
-    if (currentPage < totalPages) {
-      currentPage++;
-      updateGallery();
-      updatePager();
+    function updateGallery() {
+        const translateValue = -currentIndex * (100 / imagesPerPage);
+        gallery.style.transform = `translateX(${translateValue}%)`;
     }
-  });
 
-  function updateGallery() {
-    const translateValue = -((currentPage - 1) * 100) + "%";
-    gallery.style.transform = "translateX(" + translateValue + ")";
-  }
+    function showPage(page) {
+        currentIndex = page * imagesPerPage;
+        updateGallery();
+        updatePager();
+    }
 
-  function updatePager() {
-    pageNumber.textContent = currentPage + " / " + totalPages;
-  }
+    function showNextPage() {
+        if (currentIndex + imagesPerPage < totalImages) {
+            currentIndex += imagesPerPage;
+            updateGallery();
+            updatePager();
+        }
+    }
+
+    function showPrevPage() {
+        if (currentIndex - imagesPerPage >= 0) {
+            currentIndex -= imagesPerPage;
+            updateGallery();
+            updatePager();
+        }
+    }
+
+    prevBtn.addEventListener('click', showPrevPage);
+    nextBtn.addEventListener('click', showNextPage);
+
+    // Initialize
+    updatePager();
+
+    // Optional: Implement touch/swipe support for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    gallery.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    gallery.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (swipeDistance > 50) {
+            showPrevPage();
+        } else if (swipeDistance < -50) {
+            showNextPage();
+        }
+    });
 });
+
