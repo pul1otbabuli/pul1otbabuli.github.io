@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const images = document.querySelectorAll('.gallery img');
     const totalImages = images.length;
+    const imagesPerPageDesktop = 3;
+    const imagesPerPageMobile = 1;
     let currentIndex = 0;
-    const imagesPerPage = 3;
+    let imagesPerPage = window.innerWidth > 600 ? imagesPerPageDesktop : imagesPerPageMobile;
     const totalPages = Math.ceil(totalImages / imagesPerPage);
 
     function updatePager() {
@@ -46,6 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize
     updatePager();
+
+    // Update images per page on window resize
+    window.addEventListener('resize', function () {
+        imagesPerPage = window.innerWidth > 600 ? imagesPerPageDesktop : imagesPerPageMobile;
+        updateGallery();
+        updatePager();
+    });
 
     // Optional: Implement touch/swipe support for mobile devices
     let touchStartX = 0;
