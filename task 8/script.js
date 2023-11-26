@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Send form data to the server using fetch or another AJAX method
         // For example, using formcarry.com as a server
-        fetch('https://formcarry.com/s/your-form-id', {
+        fetch('https://formcarry.com/s/LTM_tPRuTd', {
             method: 'POST',
             body: formData,
             headers: {
