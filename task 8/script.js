@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeFormButton = document.getElementById('closeFormButton');
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
 
     // Check for previously entered values in LocalStorage
     if (localStorage.getItem('formValues')) {
@@ -45,11 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        // Check if the phone number is valid
+        const phone = contactForm.phone.value;
+        if (!isValidPhone(phone)) {
+            formMessage.textContent = 'Введите корректный номер телефона (10 цифр)';
+            return;
+        }
+
         const formData = new FormData(contactForm);
 
         // Send form data to the server using fetch or another AJAX method
         // For example, using formcarry.com as a server
-        fetch('https://formcarry.com/s/LTM_tPRuTd', {
+        fetch('https://formcarry.com/s/your-form-id', {
             method: 'POST',
             body: formData,
             headers: {
@@ -67,6 +76,25 @@ document.addEventListener('DOMContentLoaded', function () {
             formMessage.textContent = 'Ошибка при отправке формы';
             console.error('Error:', error);
         });
+    });
+
+    // Event listeners for real-time validation
+    emailInput.addEventListener('input', function () {
+        const email = emailInput.value;
+        if (!isValidEmail(email)) {
+            formMessage.textContent = 'Введите корректный адрес электронной почты';
+        } else {
+            formMessage.textContent = '';
+        }
+    });
+
+    phoneInput.addEventListener('input', function () {
+        const phone = phoneInput.value;
+        if (!isValidPhone(phone)) {
+            formMessage.textContent = 'Введите корректный номер телефона (10 цифр)';
+        } else {
+            formMessage.textContent = '';
+        }
     });
 
     // Function to get form values as an object
@@ -95,6 +123,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    }
+
+    // Function to check if the phone number is valid
+    function isValidPhone(phone) {
+        const phoneRegex = /^\d{10}$/; // Assuming a 10-digit phone number
+        return phoneRegex.test(phone);
     }
 });
 
