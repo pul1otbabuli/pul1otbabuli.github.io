@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Form</title>
+</head>
+<body>
+
+    <button id="openFormButton">Открыть форму</button>
+
+    <div id="formPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closeFormButton">&times;</span>
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm">
+                <label for="fullName">ФИО:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="organization">Организация:</label>
+                <input type="text" id="organization" name="organization">
+
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <label for="agreement">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    Я согласен с политикой обработки персональных данных
+                </label>
+
+                <button type="button" onclick="submitForm()">Отправить</button>
+            </form>
+            <div id="formMessage"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
