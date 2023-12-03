@@ -1,140 +1,96 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const formPopup = document.getElementById('formPopup');
-    const openFormButton = document.getElementById('openFormButton');
-    const closeFormButton = document.getElementById('closeFormButton');
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-    const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
+function send(event) {
+    // убираем стандартное поведение формы
+    event.preventDefault();
 
-    // Check for previously entered values in LocalStorage
-    if (localStorage.getItem('formValues')) {
-        const savedValues = JSON.parse(localStorage.getItem('formValues'));
-        populateForm(savedValues);
+    // Валидация на чекбокс
+    let acceptionEl = document.getElementById("uacception");
+    if (!acceptionEl.checked) {
+        alert("Примите политику обработки персональных данных");
+        return false;
     }
 
-    openFormButton.addEventListener('click', function () {
-        formPopup.style.display = 'block';
-        // Save current URL to History API
-        history.pushState({ page: 'form' }, 'Form', '?form');
+    // Создаем новый запрос
+    let request = new XMLHttpRequest();
+    request.open("POST", "https://formcarry.com/s/G9Dc0K8CB1");
+    request.setRequestHeader("ACCEPT", "application/json");
+
+    // Заполняем данные
+
+    let data = new FormData();
+    
+    let inputEls = document.getElementsByClassName("save");
+    [...inputEls].forEach(inputEl => {
+        data.append(inputEl.id, inputEl.value);
+    });
+    
+    // Устанавливаем обработку на изменение состояния запроса
+    request.onreadystatechange = () => {
+        if (request.readyState === XMLHttpRequest.DONE) {
+          const status = request.status;
+          if (status === 0 || (status >= 200 && status < 400)) {
+            alert("Форма успешно отправлена");
+          } else {
+            alert("Произошла ошибка." + status);
+          }
+        }
+    };
+
+    // Отправляем данные
+    request.send(data);
+    // Отчистка хранилища
+    [...inputEls].forEach(inputEl => {
+        inputEl.value = "";
+        localStorage.setItem(inputEl.id, "");
     });
 
-    closeFormButton.addEventListener('click', function () {
-        formPopup.style.display = 'none';
-        // Reset URL on closing the form
-        history.pushState({ page: 'home' }, 'Home', '/');
-    });
-
-    window.addEventListener('popstate', function (event) {
-        if (event.state && event.state.page === 'home') {
-            formPopup.style.display = 'none';
-        }
-    });
-
-    contactForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        // Check if the checkbox is checked
-        if (!contactForm.agreement.checked) {
-            formMessage.textContent = 'Необходимо согласие с политикой обработки персональных данных';
-            return;
-        }
-
-        // Check if the email is valid
-        const email = contactForm.email.value;
-        if (!isValidEmail(email)) {
-            formMessage.textContent = 'Введите корректный адрес электронной почты';
-            return;
-        }
-
-        // Check if the phone number is valid
-        const phone = contactForm.phone.value;
-        if (!isValidPhone(phone)) {
-            formMessage.textContent = 'Введите корректный номер телефона (10 цифр)';
-            return;
-        }
-
-        const formData = new FormData(contactForm);
-
-        // Send form data to the server using fetch or another AJAX method
-        // For example, using formcarry.com as a server
-        fetch('https://formcarry.com/s/LTM_tPRuTd', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json',
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            formMessage.textContent = data.title;
-            contactForm.reset();
-            // Save the current form values to LocalStorage
-            localStorage.setItem('formValues', JSON.stringify(getFormValues()));
-        })
-        .catch(error => {
-            formMessage.textContent = 'Ошибка при отправке формы';
-            console.error('Error:', error);
-        });
-    });
-
-    // Event listeners for real-time validation
-    emailInput.addEventListener('input', function () {
-        const email = emailInput.value;
-        if (!isValidEmail(email)) {
-            formMessage.textContent = 'Введите корректный адрес электронной почты';
-        } else {
-            formMessage.textContent = '';
-        }
-    });
-
-    phoneInput.addEventListener('input', function () {
-        const phone = phoneInput.value;
-        if (!isValidPhone(phone)) {
-            formMessage.textContent = 'Введите корректный номер телефона (10 цифр)';
-        } else {
-            formMessage.textContent = '';
-        }
-    });
-
-    // Function to get form values as an object
-    function getFormValues() {
-        const values = {};
-        const elements = contactForm.elements;
-        for (let i = 0; i < elements.length; i++) {
-            if (elements[i].name) {
-                values[elements[i].name] = elements[i].value;
-            }
-        }
-        return values;
-    }
-
-    // Function to populate form fields with saved values
-    function populateForm(savedValues) {
-        const elements = contactForm.elements;
-        for (let i = 0; i < elements.length; i++) {
-            if (elements[i].name && savedValues[elements[i].name]) {
-                elements[i].value = savedValues[elements[i].name];
-            }
-        }
-    }
-
-    // Function to check if the email is valid
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    // Function to check if the phone number is valid
-    function isValidPhone(phone) {
-        const phoneRegex = /^\d{10}$/; // Assuming a 10-digit phone number
-        return phoneRegex.test(phone);
-    }
-});
-
-// Function to submit the form and close the popup
-function submitForm() {
-    document.getElementById('contactForm').submit();
-    document.getElementById('formPopup').style.display = 'none';
+    hide();
 }
 
+function show () {
+    // второй параметр устарел, передается пустая строка
+    history.pushState({form: true}, "", "./#form");
+    let modal = document.getElementById("modal");
+    modal.setAttribute("data--modal", "shown");
+}
+
+function hide() {
+    // второй параметр устарел, передается пустая строка
+    history.replaceState({form: false}, "", "./");
+    let modal = document.getElementById("modal");
+    modal.setAttribute("data--modal", "hidden");
+}
+
+function saveInput(event) {
+    localStorage.setItem(event.target.id, event.target.value);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (history.state == null) {
+        history.pushState({form: false}, "", "./");
+    }
+    // проверка на активность формы
+    if (history.state.form) {
+        show();
+    }
+    
+    let feedbackButtonEl = document.getElementById("feedback-button");    
+    feedbackButtonEl.addEventListener('click', show);
+
+    let closeButton = document.getElementById("close-button");
+    closeButton.addEventListener("click", hide);
+
+    let inputEls = document.getElementsByClassName("save");
+
+    [...inputEls].forEach(inputEl => {
+        // Загрузка значений в инпуты
+        inputEl.value = localStorage.getItem(inputEl.id);
+    });
+    
+    [...inputEls].forEach(inputEl => {
+        // Добавляем ивент на сохранение значения
+        inputEl.addEventListener("input", saveInput);
+    });
+
+    let submitButton = document.getElementById("submit-button");
+    submitButton.addEventListener("click", send);
+});
