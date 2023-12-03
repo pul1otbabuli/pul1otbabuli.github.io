@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Contact Form</title>
+    <title>Форма</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
+
 <body>
-
-    <button id="openFormButton">Открыть форму</button>
-
-    <div id="formPopup" class="popup">
-        <div class="popup-content">
-            <span class="close" id="closeFormButton">&times;</span>
-            <h2>Форма обратной связи</h2>
-            <form id="contactForm">
-                <label for="fullName">ФИО:</label>
-                <input type="text" id="fullName" name="fullName" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">Телефон:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="organization">Организация:</label>
-                <input type="text" id="organization" name="organization">
-
-                <label for="message">Сообщение:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <label for="agreement">
-                    <input type="checkbox" id="agreement" name="agreement" required>
-                    Я согласен с политикой обработки персональных данных
-                </label>
-
-                <button type="button" onclick="submitForm()">Отправить</button>
-            </form>
-            <div id="formMessage"></div>
+    <div id="modal" data--modal="hidden">
+        <div id="modal-inner">
+            <div id="modal-head">
+                <h1>Обратная связь</h1>
+                <button id="close-button">Закрыть</button>
+            </div>
+            <div id="modal-body">
+                <form id="form" accept-charset="UTF-8">
+                    <div id="form-name">
+                        <label for="uname">ФИО:</label>
+                        <input type="text" name="uname" id="uname" class="save" required placeholder="Ваше имя">
+                    </div>
+                    <div id="form-email">
+                        <label for="uemail">Почта:</label>
+                        <input type="email" name="uemail" id="uemail" class="save" placeholder="Ваша почта">
+                    </div>
+                    <div id="form-phone">
+                        <label for="uphone">Телефон:</label>
+                        <input type="tel" name="uphone" id="uphone" class="save" placeholder="Ваш телефонный номер">
+                    </div>
+                    <div id="form-organisation">
+                        <label for="uorganisation">Организация:</label>
+                        <input type="text" name="uorganisation" id="uorganisation" class="save" placeholder="Ваша Организация">
+                    </div>
+                    <div id="form-message">
+                        <label for="umessage">Сообщение:</label>
+                        <textarea name="umessage" id="umessage" rows="5" class="save" required></textarea>
+                    </div>
+                    <div id="form-acception">
+                        <input type="checkbox" name="uacception" id="uacception" required checked>
+                        <label for="uacception">Я согласен с политикой обработки персональных данных.</label>
+                    </div>
+                    <div>
+                        <button type="button" id="submit-button">Отправить</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <div id="content">
+        <button type="button" id="feedback-button">Обратная связь</button>
+    </div>
 </body>
 </html>
