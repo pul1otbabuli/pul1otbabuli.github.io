@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Image Gallery</title>
+    <title>Задание №7</title>
+    <link rel="stylesheet" href="slider/splide.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="slider/splide.min.js" defer></script>
+    <script src="./script.js" defer></script>
 </head>
+
 <body>
-
-    <div class="gallery-container">
-        <div class="gallery-wrapper">
-            <div class="gallery">
-                <img src="image1.jpg" alt="Image 1">
-                <img src="image2.jpg" alt="Image 2">
-                <img src="image3.jpg" alt="Image 3">
-                <img src="image4.jpg" alt="Image 4">
-                <img src="image5.jpg" alt="Image 5">
-                <img src="image6.jpg" alt="Image 6">
-                <img src="image7.jpg" alt="Image 7">
-                <img src="image8.jpg" alt="Image 8">
-            </div>
-        </div>
-        <div class="pager"></div>
-        <div class="controls">
-            <div class="prev">&#10094;</div>
-            <div class="next">&#10095;</div>
-        </div>
+<section id="image-carousel" class="splide" aria-label="Images">
+    <div class="splide__track">
+        <ul class="splide__list">
+            <li class="splide__slide">
+                <img src="images/img1.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="images/img2.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="images/img3.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="images/img4.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="images/img5.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="images/img6.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="images/img7.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="images/img8.jpg" alt="">
+            </li>
+        </ul>
     </div>
-
-    <script src="script.js"></script>
+</section>
 </body>
+
 </html>
-
-
