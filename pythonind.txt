@@ -1,0 +1,83 @@
+1)import numpy as np
+
+# Задание 1: Найти максимальное значение и индекс
+vector = np.random.rand(20)  # Создаем случайный вектор длиной 20
+max_value = np.max(vector)
+max_index = np.argmax(vector)
+
+print("Вектор:", vector)
+print("Максимальное значение:", max_value)
+print("Индекс максимального значения:", max_index)
+
+2)import numpy as np
+
+# Задание 2: Найти сумму элементов каждой строки и индекс строки с максимальной суммой
+matrix = np.random.rand(3, 4)  # Создаем случайную матрицу 3x4
+sum_per_row = np.sum(matrix, axis=1)
+max_sum_index = np.argmax(sum_per_row)
+
+print("Матрица:")
+print(matrix)
+print("Сумма элементов каждой строки:", sum_per_row)
+print("Индекс строки с максимальной суммой:", max_sum_index)
+
+3)import numpy as np
+import matplotlib.pyplot as plt
+
+# Задание 3: Построить круговую диаграмму расходов семьи
+categories = ['Аренда/ипотека', 'Продукты питания', 'Транспорт', 'Развлечения', 'Прочие расходы']
+budget = np.array([2000, 1500, 500, 300, 700])
+
+plt.figure(figsize=(8, 8))
+plt.pie(budget, labels=categories, autopct='%1.1f%%', startangle=140)
+plt.title('Распределение бюджета семьи по категориям расходов')
+plt.show()
+
+4)import numpy as np
+import matplotlib.pyplot as plt
+
+# Задание 4: Построить гистограмму распределения возраста отдыхающих
+ages = np.random.randint(18, 70, 100)  # Генерируем случайные данные о возрасте отдыхающих
+
+plt.hist(ages, bins=10, color='skyblue', edgecolor='black')  # Строим гистограмму
+plt.xlabel('Возраст')
+plt.ylabel('Количество отдыхающих')
+plt.title('Распределение отдыхающих по возрасту')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+5) import numpy as np
+import matplotlib.pyplot as plt
+
+# Задание 5: Построить круговую диаграмму расходов на материалы
+materials = ['Металл', 'Пластик', 'Стекло', 'Ткань', 'Дерево']
+expenses = np.array([4000, 3000, 2000, 1500, 1000])
+
+plt.figure(figsize=(8, 8))
+plt.pie(expenses, labels=materials, autopct='%1.1f%%', startangle=140, colors=['red', 'orange', 'yellow', 'green', 'blue'])
+plt.title('Доля расходов на каждый тип материалов')
+plt.show()
+
+6)import re
+
+# Ввод строки от пользователя
+input_str = input("Введите строку: ")
+
+# Нахождение всех вхождений "ab" или "ba" в строке
+pattern_ab = re.compile(r'ab')
+pattern_ba = re.compile(r'ba')
+pattern_all = re.compile(r'ab|ba')
+
+matches_ab = pattern_ab.findall(input_str)
+matches_ba = pattern_ba.findall(input_str)
+matches_all = pattern_all.findall(input_str)
+
+# Подсчет количества вхождений
+count_ab = len(matches_ab)
+count_ba = len(matches_ba)
+count_all = len(matches_all)
+
+# Вывод результатов
+print("Количество вхождений 'ab':", count_ab)
+print("Количество вхождений 'ba':", count_ba)
+print("Общее количество вхождений 'ab' и 'ba' вместе:", count_all)
